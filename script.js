@@ -39,3 +39,35 @@ const navLinks = document.getElementById("navLinks");
 menuBtn.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
+
+let slideIndex = 0;
+const slides = document.getElementsByClassName("slide");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+
+function showSlide(index) {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[index].style.display = "block";
+}
+
+// Initial display
+showSlide(slideIndex);
+
+// Next/Prev controls
+next.addEventListener("click", () => {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+});
+
+prev.addEventListener("click", () => {
+  slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+  showSlide(slideIndex);
+});
+
+// Auto Slide
+setInterval(() => {
+  slideIndex = (slideIndex + 1) % slides.length;
+  showSlide(slideIndex);
+}, 5000); // change slide every 5 seconds

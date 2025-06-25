@@ -116,3 +116,54 @@ body.dark nav a {
     display: block;
   }
 }
+
+/* Slideshow Styles */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  background: #eee;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+  animation: fade 1s ease-in-out;
+}
+
+.slide h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 0.5rem;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(255,255,255,0.7);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #ddd;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
